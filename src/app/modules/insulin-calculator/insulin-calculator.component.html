@@ -1,0 +1,121 @@
+<div class="ic-calculator round-top round-bottom">
+  <div class="ic-step">
+    <span class="ic-title round-top">
+      {{ labels.sensitivityFactor.title }}
+    </span>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.sensitivityFactor.label }}
+      </div>
+      <div class="ic-input">
+        <input type="number" min="0" [(ngModel)]="dailyInsulinDose" (ngModelChange)="sensitivityFactorCalc()"/>
+      </div>
+      <div class="ic-measure">
+        {{ labels.sensitivityFactor.measure }}
+      </div>
+    </div>
+  </div>
+  <div class="ic-step">
+    <span class="ic-title">
+      {{ labels.mealBolus.title }}
+    </span>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.mealBolus.intakeCarbs.label }}
+      </div>
+      <div class="ic-input">
+        <input type="number" min="0" [(ngModel)]="intakeCarbs" (ngModelChange)="mealBolusCalc()" />
+      </div>
+      <div class="ic-measure">
+        {{ labels.mealBolus.intakeCarbs.measure }}
+      </div>
+    </div>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.mealBolus.carbRatio.label }}
+      </div>
+      <div class="ic-input">
+        <input type="text" [value]="carbRatio" readonly />
+      </div>
+      <div class="ic-measure">
+        {{ labels.mealBolus.carbRatio.measure }}
+      </div>
+    </div>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.mealBolus.result.label }}
+      </div>
+      <div class="ic-input">
+        <input type="text" [value]="mealBolus" readonly />
+      </div>
+      <div class="ic-measure">
+        {{ labels.mealBolus.result.measure }}
+      </div>
+    </div>
+  </div>
+  <div class="ic-step">
+    <span class="ic-title">
+      {{ labels.correctionBolus.title }}
+    </span>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.correctionBolus.currentGlucose.label }}
+      </div>
+      <div class="ic-input">
+        <input type="number" min="0" [(ngModel)]="currentGlucose" (ngModelChange)="correctionBolusCalc()" />
+      </div>
+      <div class="ic-measure">
+        {{ labels.correctionBolus.currentGlucose.measure }}
+      </div>
+    </div>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.correctionBolus.targetGlucose.label }}
+      </div>
+      <div class="ic-input">
+        <input type="number" min="1" [(ngModel)]="targetGlucose" (ngModelChange)="correctionBolusCalc()" />
+      </div>
+      <div class="ic-measure">
+        {{ labels.correctionBolus.targetGlucose.measure }}
+      </div>
+    </div>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.correctionBolus.sensitivityFactor.label }}
+      </div>
+      <div class="ic-input">
+        <input type="text" [value]="sensitivityFactor" readonly />
+      </div>
+      <div class="ic-measure">
+        {{ labels.correctionBolus.sensitivityFactor.measure }}
+      </div>
+    </div>
+    <div class="ic-field">
+      <div class="ic-label">
+        {{ labels.correctionBolus.result.label }}
+      </div>
+      <div class="ic-input">
+        <input type="text" [value]="correctionBolus" readonly />
+      </div>
+      <div class="ic-measure">
+        {{ labels.correctionBolus.result.measure }}
+      </div>
+    </div>
+  </div>
+  <div class="ic-step">
+    <span class="ic-title">
+      {{ labels.totalResult.title }}
+    </span>
+    <div class="ic-field round-bottom">
+      <div class="ic-label">
+        {{ labels.totalResult.label }}
+      </div>
+      <div class="ic-input">
+        <input type="text" [value]="mealBolus + correctionBolus" readonly />
+      </div>
+      <div class="ic-measure">
+        {{ labels.totalResult.measure }}
+      </div>
+    </div>
+  </div>
+</div>

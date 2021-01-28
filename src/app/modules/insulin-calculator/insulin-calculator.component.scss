@@ -1,0 +1,65 @@
+$radius: 4px;
+$height: 50px;
+$padding: 20px;
+$fieldW: 90px;
+$measureW: 60px;
+
+.ic-calculator {
+	display: grid;
+	background-color: #fff;
+	box-sizing: border-box;
+	.ic-step {
+		.ic-title {
+			height: $height;
+			line-height: $height;
+			display: grid;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.1);
+			padding: 0 $padding;
+		}
+		.ic-field {
+			height: $height;
+			line-height: $height;
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr $fieldW 60px;
+			grid-gap: $padding;
+      padding: 0 $padding;
+      border-bottom: 1px solid  rgba(0, 0, 0, 0.1);
+			.ic-input {
+				display: flex;
+				height: 100%;
+				input {
+					box-sizing: border-box;
+					width: $fieldW;
+					border: none;
+					outline: none;
+					text-align: left;
+          padding: 0 $padding;
+          font-size: 14px;
+					background-color: rgba(0, 0, 0, 0.03);
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.04);
+					}
+				}
+			}
+			.ic-measure {
+				display: grid;
+				width: $measureW;
+				align-items: center;
+				justify-content: center;
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+.round-top{
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+.round-bottom{
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
