@@ -171,4 +171,6 @@ Current blood glucose | Your current blood glucose concentration in mg/dL.
 Target blood glucose | Your target blood glucose concentration in mg/dL.
 Insulin sensitivity factor | The insulin sensitivity factor tells you how many points, in mg/dL, your blood glucose will drop for each unit of insulin that you take. 
 
+### 6. Notice
+This tool can never replace a professional medical advice. 
 
