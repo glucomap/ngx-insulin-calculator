@@ -168,11 +168,30 @@ Field | Description
 Total daily insulin dose | The daily dose of insulin is used to calculate the carbohydrate ratio and then calculate the correction bolus and meal bolus.
 Intake carbohydrate | Total grams of carbohydrates to be eaten.
 Carbohydrate ratio | This is how many grams of carbohydrates are covered by one unit of insulin.
-Meal bolus | It is the amount of ultra-fast insulin needed to cover the grams of carbohydrates.
+Meal bolus | It is the amount (in units) of ultra-fast insulin needed to cover the grams of carbohydrates.
 Current blood glucose | Your current blood glucose concentration in mg/dL.
 Target blood glucose | Your target blood glucose concentration in mg/dL.
+Correction bolus | It is the amount (in units) of insulin needed to reduce glucose to the target.
 Insulin sensitivity factor | The insulin sensitivity factor tells you how many points, in mg/dL, your blood glucose will drop for each unit of insulin that you take. 
 
-### 6. Notice
+### 6. Insulin calculator service
+
+First, inject the service into the component.
+
+```javascript
+constructor(private insulinCalculator: InsulinCalculatorService){}
+```
+#### 6.1 Methods
+Method | Description | Return
+---|---|---
+`sensitivityFactorCalc(dailyInsulineDose: number, constant = 1800)` |  Calculates the value of the insulin sensitivity factor. | Number (in mg/dL)
+`correctionBolusCalc(currentGlucose: number, targetGlucose: number, sensitivityFactor: number)` | Calculates the correction bolus. | Number (insulin units)
+`mealBolusCalc(intakeCarbs: number,dailyInsulineDose: number,constant = 500)` | Calculates the meal bolus. | { carbCoveragePerUnit (carb ratio in mg/dL), mealBolus (insulin units) }
+`mealBolusDefaultCalc(intakeCarbs: number, defaultCarbCoverage = 15)` |  Calculates the meal bolus by default carb coverage | { carbCoveragePerUnit (carb ratio in mg/dL), mealBolus (insulin units) }
+`convertMgdlToMmoll(mgdlValue: number, constant = 18)` | Convert milligrams per deciliter to millimoles per liter | Number (in mmol/L)
+`convertMmollToMgdl(mmollValue: number, constant = 18)`| Convert millimoles per liter to milligrams per deciliter | Number (in mg/dL)
+
+
+### 7. Notice
 This tool can never replace a professional medical advice. 
 
