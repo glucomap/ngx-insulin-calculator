@@ -1,6 +1,7 @@
 # @vicentecalfo/ngx-insulin-calculator
 This Angular component was created to show you how to calculate insulin dose with as little effort as possible.
-**This tool can never replace a professional medical advice. **
+
+**This tool can never replace a professional medical advice.**
 
 ## Installation
 First you need to install the npm module.
