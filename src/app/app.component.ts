@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 	title = 'ngx-insulin-calculator';
 
-	valuesChange(event) {
-		console.log(event);
-	}
+	// valuesChange(event) {
+	// 	console.log(event);
+	// }
 }
